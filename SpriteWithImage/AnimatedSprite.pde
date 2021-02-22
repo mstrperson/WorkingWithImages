@@ -14,6 +14,7 @@ public class AnimatedSprite extends Sprite
   public void drawSprite()
   {
     image = loadImage(frameFileNames[frameNumber]);
+    image.resize(100, 100);
     image(image, x, y);
     if(frameCount % 5 == 0)
     {

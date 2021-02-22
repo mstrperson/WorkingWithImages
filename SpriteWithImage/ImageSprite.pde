@@ -10,6 +10,7 @@ public class ImageSprite extends Sprite
   
   public void drawSprite()
   {
+    img.resize(100, 100);
     image(img, x, y);
     image(img, x-width, y);
     image(img, x+width, y);

@@ -16,6 +16,9 @@ void draw()
   background(0, 72, 180);
   if(keyPressed) star.keyboardControl();
   star.drawSprite();
+  println(red(get(mouseX, mouseY)), 
+          green(get(mouseX, mouseY)),
+          blue(get(mouseX, mouseY)));
 }
 
 // Converts "White" to "Transparent".
