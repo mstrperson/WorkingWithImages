@@ -1,10 +1,14 @@
-ImageSprite star;
+AnimatedSprite star;
+
+String[] fileNames = 
+  { "red.png", "orange.png", "yellow.png", 
+    "green.png", "blue.png", "purple.png" };
 
 void setup()
 {
   size(800, 600);
   // x and y position and then the file name
-  star = new ImageSprite(100, 100, "star_transparent.png");
+  star = new AnimatedSprite(100, 100, fileNames);
 }
 
 void draw()
