@@ -1,7 +1,7 @@
 public class AnimatedSprite extends Sprite
 {
   protected String[] frameFileNames;
-  protected PImage image;
+  protected PImage img;
   protected int frameNumber;
   
   public AnimatedSprite(float x, float y, String[] frames)
@@ -13,12 +13,12 @@ public class AnimatedSprite extends Sprite
   
   public void drawSprite()
   {
-    image = loadImage(frameFileNames[frameNumber]);
-    image.resize(100, 100);
-    image(image, x, y);
-    if(frameCount % 5 == 0)
+    img = loadImage(frameFileNames[frameNumber]);
+    img.resize(100, 100);
+    image(img, x, y);
+    if(frameCount % 5 == 0) // every 5th frame
     {
-      frameNumber++;
+      frameNumber++;        
       frameNumber = frameNumber % frameFileNames.length;
     }
   }
