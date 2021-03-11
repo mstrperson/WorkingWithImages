@@ -11,16 +11,20 @@ void setup()
   
   // create a Deck!
   theDeck = new Deck();
+  theDeck.Shuffle();
 }
 
 void draw()
 {
-  PlayingCard card = theDeck.Deal();
-  // move the card over~
-  card.moveTo(x, y);
-  // get ready for the next card.
-  x+=20;
-  card.drawSprite();
-  // short delay so you can see the cards~
-  delay(500);
+  if(!theDeck.IsEmpty())
+  {
+    PlayingCard card = theDeck.Deal();
+    // move the card over~
+    card.moveTo(x, y);
+    // get ready for the next card.
+    x+=20;
+    card.drawSprite();
+    // short delay so you can see the cards~
+    delay(500);
+  }
 }
