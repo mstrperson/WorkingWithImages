@@ -1,17 +1,15 @@
-//PlayingCard card;
-
+// Here's the Deck
 Deck theDeck;
 // keep track of where to place teh card
 int x = 0, y = 0;
+
 void setup()
 {
   size(1280, 720);
   
-  //card = new PlayingCard(10, 10, 1, "S");
-  
   // create a Deck!
   theDeck = new Deck();
-  
+  // Shuffle the Deck.
   theDeck.Shuffle();
 }
 
