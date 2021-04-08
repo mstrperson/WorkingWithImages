@@ -34,7 +34,76 @@ void dealHands()
   }
 }
 
-
+void playRound()
+{
+  PlayingCard card1 = player1.remove(0);
+  PlayingCard card2 = player2.remove(0);
+  
+  card1.moveTo(100, 300);
+  card1.drawSprite();
+  
+  card2.moveTo(500, 300);
+  card2.drawSprite();
+  
+  // Player 1 wins
+  if(card1.value > card2.value)
+  {
+    player1.add(card1);
+    player1.add(card2);
+  }
+  // Player 2 wins
+  else if(card2.value > card1.value)
+  {
+    player2.add(card1);
+    player2.add(card2);
+  }
+  // TIE
+  else
+  {
+    textSize(100);
+    text("WAR!!!", 200, 100);
+    
+    ArrayList<PlayingCard> pile = new ArrayList<PlayingCard>();
+    
+    while(card1.value == card2.value)
+    {
+      pile.add(card1);
+      pile.add(card2);
+      
+      card1 = player1.remove(0);
+      card2 = player2.remove(0);
+      
+      card1.moveTo(100, 300);
+      card1.drawSprite();
+      
+      card2.moveTo(500, 300);
+      card2.drawSprite();
+      
+      delay(1000);
+    }
+    
+    pile.add(card1);
+    pile.add(card2);
+    
+    // Player 1 wins
+    if(card1.value > card2.value)
+    {
+      for(PlayingCard card : pile)
+      {
+        player1.add(card);
+      }
+    }
+    // Player 2 wins
+    else if(card2.value > card1.value)
+    {
+      for(PlayingCard card : pile)
+      {
+        player2.add(card);
+      }
+    }
+    
+  } // End of WAR
+}
 
 void draw()
 {
