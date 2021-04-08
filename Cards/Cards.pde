@@ -17,6 +17,8 @@ void setup()
   {
     theDeck.Shuffle();
   }
+  
+  dealHands();
 }
 
 
@@ -32,6 +34,11 @@ void dealHands()
       player2.add(theDeck.Deal());
     }
   }
+}
+
+void showScore()
+{
+  
 }
 
 void playRound()
@@ -107,15 +114,6 @@ void playRound()
 
 void draw()
 {
-  if( !theDeck.isEmpty() )
-  {
-    PlayingCard card = theDeck.Deal();
-    // move the card over~
-    card.moveTo(x, y);
-    // get ready for the next card.
-    x+=20;
-    card.drawSprite();
-    // short delay so you can see the cards~
-    delay(500);
-  }
+  playRound();
+  delay(1000);
 }
